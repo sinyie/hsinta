@@ -1,0 +1,132 @@
+/*基本通用設定*/
+/*zdialog*/
+.buttonStyle
+	width: 64px
+	height: 22px
+	line-height: 22px
+	color: #ad6c39
+	text-align: center
+	background: url(images/buticon.gif) no-repeat left top
+	border: 0.75em
+	font-size: 
+	
+	&:hover
+		background: url(images/buticon.gif) no-repeat left -23px
+
+
+body
+	font-size: 100%
+	margin: 0
+	padding: 0
+	position: relative !important
+	background: $bg-blue
+	/*body設定font-size:100%可避免em為單位的基準在IE放大*/
+
+a
+	text-decoration: none
+	-webkit-transition: all 0.3s ease-in-out
+	-moz-transition: all 0.3s ease-in-out
+	-o-transition: all 0.3s ease-in-out
+	-ms-transition: all 0.3s ease-in-out
+	transition: all 0.3s ease-in-out
+
+
+/*反白字體*/
+//::selection 
+//	background: rgba(66,125,245,0.54)
+
+/*按下無藍色框*/
+// *
+// 	-webkit-tap-highlight-color: rgba(66,125,245,0.54)
+
+/*無障礙focus用*/
+// *:focus
+// 	outline: $main-color solid medium !important
+	
+
+/*scrollbar*/
+::-webkit-scrollbar
+	width: 6px
+	height: 8px	
+
+::-webkit-scrollbar-thumb
+	background: $main-color
+	//border-radius: 4px
+
+
+	
+
+
+/*頁面框架及常用設定*/
+
+.max-width
+	width: 100%
+	margin: 0 auto
+	@include maxcom
+		width: $maxcom
+
+.com-width
+	width: 100%
+	margin: 0 auto
+	@include computer
+		width: $computer
+
+.plr-20
+	padding-left: 20px
+	padding-right: 20px
+
+	
+
+
+.clear
+	clear: both
+
+
+/*列印隱藏區域*/
+.print-hidden
+	@include print
+		display: none
+
+/*區塊陰影設定*/
+@mixin section-box-shadow
+	-webkit-box-shadow: 0 12px 20px 0 rgba(0,0,0,0.12)
+	-moz-box-shadow: 0 12px 20px 0 rgba(0,0,0,0.12)
+	box-shadow: 0 12px 20px 0 rgba(0,0,0,0.12)
+		
+/*白色區塊空間設定*/
+@mixin section-white-area
+	-webkit-box-shadow: 0 12px 20px 0 rgba(0,0,0,0.12)
+	-moz-box-shadow: 0 12px 20px 0 rgba(0,0,0,0.12)
+	box-shadow: 0 12px 20px 0 rgba(0,0,0,0.12)
+	border-radius: 8px
+	background: #FFF
+		
+
+/*文字相關設定*/
+/*文字單行+nowrap*/
+@mixin nowrap
+	overflow: hidden
+	text-overflow: ellipsis
+	white-space: nowrap
+
+/*文字設定*/
+@mixin text-style
+	font:
+		family: $text-style
+		size: $text-16px
+		weight: 500
+	color: $black
+
+/*英文標設定*/
+@mixin en-text-style
+	font:
+		family: $text-en
+		size: $text-15px
+		weight: 700
+	color: $black
+	letter-spacing: 0.5px
+
+
+
+
+

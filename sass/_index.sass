@@ -1,0 +1,293 @@
+//首頁樣式
+/*興達發電廠環保監視系統*/
+.indexStatus-area
+	@include text-style
+	.status-bk
+		width: 100%
+		display: grid
+		grid-template-columns: 1fr
+		grid-gap: 20px 20px
+		@include ipad
+			grid-template-columns: 1fr 1.2fr 1.2fr 
+	/*全廠*/
+	.total-status
+		width: 100%
+		padding: 35px 40px 20px 40px
+		@include section-white-area
+		/*時間*/
+		.time-arrow-area
+			font: 
+				size: $text-15px
+				family: $text-en-bold
+			color: rgba(67,66,93,0.54)
+			position: relative
+			.arrow
+				@include circle-bt-module
+				position: absolute
+				right: 0px
+				top: 0px
+		/*圓餅圖區域*/
+		.total-circle
+			width: 100%
+			height: auto
+			margin: 35px auto 5px auto 
+			@include ipad
+				margin: 60px auto 50px auto 
+			@include maxcom-1920
+				margin: 30px auto 0px auto 
+				position: relative
+				top: 5px
+			.circlechart_border
+				width: 100px
+				height: 100px
+				background: rgba(13,71,161,0.12)
+				//box-shadow: 0px 0px 0px 20px rgba(13,71,161,0.07),0px 0px 0px 40px rgba(13,71,161,0.05),0px 40px 40px 0px rgba(13,71,161,0.25)
+				border-radius: 50%
+				margin: 0 auto
+				animation: total-circle-ani 2s 1s infinite 
+				/*圓餅圖程式*/
+				.circlechart
+					margin: 0 auto 
+				@keyframes total-circle-ani
+				    0% 
+				        box-shadow: 0px 0px 0px 12px rgba(13,71,161,0),0px 0px 0px 25px rgba(13,71,161,0),0px 20px 20px 0px rgba(13,71,161,0.16) 
+				    70% 
+				        box-shadow: 0px 0px 0px 12px rgba(13,71,161,0.06),0px 0px 0px 25px rgba(13,71,161,0.04),0px 37px 37px 0px rgba(13,71,161,0.25) 
+				    100% 
+				    	box-shadow: 0px 0px 0px 12px rgba(13,71,161,0),0px 0px 0px 25px rgba(13,71,161,0),0px 20px 20px 0px rgba(13,71,161,0.16) 
+		/*全廠數據區*/
+		.total-info-area
+			h3.tit
+				font:
+					size: 1.25em
+					family: $text-bold
+					weight: normal
+				margin: 0 0 5px 0
+				letter-spacing: 1.5px
+				line-height: 1.5
+			h4.num
+				font:
+					size: 2.25em
+					family: $text-en-bold
+					weight: normal
+				letter-spacing: -1px
+				color: $main-color
+				span.total-num
+					font:
+						size: 0.7em
+					color: rgba(67,66,93,0.3)
+					margin: 0 0 0 5px
+				span.unit
+					font:
+						size: 0.5em
+					color: $red
+					margin: 0 0 0 5px
+	/*汽力.複循*/
+	.singleZone-status
+		width: 100%
+		@include section-white-area
+		/*單一類型總量數據*/
+		.single-total-num
+			width: 100%
+			padding: 30px 40px 25px 40px
+			/*圓餅圖區域*/
+			.single-circle
+				width: 70px
+				height: auto
+				float: left
+				margin: 0 auto 0 auto 
+				@include maxcom-1920
+					margin: 10px 60px 10px 10px
+				.circlechart_border
+					width: 70px
+					height: 70px
+					background: rgba(0,230,118,0.12)
+					border-radius: 50%
+					margin: 0 auto 0 10px
+					animation: single-circle-ani 2s 1s infinite 
+					/*圓餅圖程式*/
+					.circle-chart 
+						width: 70px
+						height: 70px
+						margin: 0 auto
+						.circle-chart__circle 
+							stroke: rgba(0,230,118,1)
+							stroke-width: 3
+						.circle-chart__background
+							stroke-width: 3
+						.circle-chart__percent
+							font-size: 12px
+							fill: rgba(0,230,118,1)
+							alignment-baseline: hanging
+					@keyframes single-circle-ani
+					    0% 
+					        box-shadow: 0px 0px 0px 8px rgba(0,230,118,0),0px 0px 0px 18px rgba(0,230,118,0),0px 10px 10px 0px rgba(0,230,118,0.16) 
+					    70% 
+					        box-shadow: 0px 0px 0px 8px rgba(0,230,118,0.08),0px 0px 0px 18px rgba(0,230,118,0.05),0px 27px 27px 0px rgba(0,230,118,0.25) 
+					    100% 
+					    	box-shadow: 0px 0px 0px 8px rgba(0,230,118,0),0px 0px 0px 18px rgba(0,230,118,0),0px 10px 10px 0px rgba(0,230,118,0.16) 
+			/*類型總數據圖*/
+			.single-info-area
+				width: auto
+				float: right
+				margin: 8px 0 0 0
+				@include ipad
+					margin: 20px 0 0 0
+				@include maxcom-1920
+					float: left
+				h3.tit
+					font:
+						size: 1.25em
+						family: $text-bold
+						weight: normal
+					margin: 0 0 10px 0
+					letter-spacing: 1.5px
+				h4.num
+					font:
+						size: 2em
+						family: $text-en-bold
+						weight: normal
+					letter-spacing: -1px
+					color: $main-color
+					span.total-num
+						font:
+							size: 0.75em
+						color: rgba(67,66,93,0.3)
+						margin: 0 5px 0 5px
+					span.unit
+						font:
+							size: 0.55em
+						color: $red
+		/*類型個別數據*/
+		.single-num-area
+			width: 100%
+			padding: 35px 40px 15px 40px
+			background: $bg-gray
+			border-radius: 0 0 8px 8px	
+			li
+				width: 50%
+				float: left
+				margin: 0 0 10px 0
+				line-height: 1.5
+				list-style-type: none
+				&:nth-of-type(2n)
+					float: right
+					padding: 0 0 0 10px 
+				h3.tit
+					font:
+						size: $text-18px
+						family: $text-bold
+						weight: normal
+					margin: 0 12px 0 0
+					letter-spacing: 1.5px
+					float: left
+					//color: $main-color
+				h4.num
+					font:
+						size: 1.375em
+						family: $text-en-bold
+						weight: normal
+					letter-spacing: -1px
+					color: rgba(13,71,161,0.8)
+					float: left
+					margin: -2px 0 0 0
+					span.total-num
+						// font:
+						// 	size: 0.75em
+						color: rgba(67,66,93,0.3)
+						margin: 0 0 0 5px
+						
+
+
+
+
+/*廠內訊息公告區*/
+.indexNews-area
+	width: 100%
+
+
+/*本日行程區*/
+.indexSchedule-area
+	width: 100%
+	/*行程輪播區*/
+	.owl-carousel
+		@include section-white-area
+		a
+			display: block
+			@include section-white-area
+			@include text-style 
+			height: 320px
+			.tit-area
+				width: 100%
+				height: 150px
+				padding: 30px 40px
+				p
+					height: 90px
+					overflow: hidden
+					font:
+						size: $text-18px
+						family: $text-medium
+					line-height: 1.7
+					letter-spacing: 0px
+	/*輪播特效按鈕樣式*/		
+	.owl-nav
+		position: absolute
+		top: -75px
+		right: 0
+		.owl-prev
+			display: none
+		.owl-next
+			@include circle-bt-module
+
+
+
+
+
+/*宣導事項區*/
+.indexPropaganda-area
+	.marquee-bk
+		width: 100%
+		@include section-white-area
+		padding: 30px 40px 
+		height: 430px
+		overflow: hidden
+		.one-propaganda
+			width: 100%
+			@include text-style
+			line-height: 1.7
+			font:
+				size: $text-18px
+			margin: 0 0 50px 0
+			.date
+				display: inline-block
+				font:
+					family: $text-en-bold
+				// margin: 0 0 30px 0
+				color: $main-color
+				float: left
+			.icon
+				float: right
+				margin: 0 25px 35px 30px 
+				position: relative
+				width: 60px
+				height: 60px
+				background: $red
+				border-radius: 50%
+				box-shadow: 0 0 0 8px rgba(213,0,0,0),0 0 0 20px rgba(213,0,0,0),0px 25px 30px 0px rgba(213,0,0,0.2) 
+				animation: propaganda-ani 2s 1s infinite 
+				img
+					position: absolute
+					top: 15px
+					left: 27px
+			.content
+				width: 100%
+				padding: 45px 0 0 0
+			@keyframes propaganda-ani
+			    0% 
+			        box-shadow: 0 0 0 8px rgba(213,0,0,0),0 0 0 20px rgba(213,0,0,0),0px 25px 30px 0px rgba(213,0,0,0.2) 
+			    70% 
+			        box-shadow: 0 0 0 8px rgba(213,0,0,0.12),0 0 0 20px rgba(213,0,0,0.1),0px 25px 30px 0px rgba(213,0,0,0.54)    
+			    100% 
+			        box-shadow: 0 0 0 8px rgba(213,0,0,0),0 0 0 20px rgba(213,0,0,0),0px 25px 30px 0px rgba(213,0,0,0.2)  
+
+

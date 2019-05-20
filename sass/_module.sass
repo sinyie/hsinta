@@ -1,0 +1,468 @@
+//頁面元件模組組件
+/*圓形更多按鈕樣式*/
+@mixin circle-bt-module
+	width: 50px
+	height: 50px
+	background: #FFF
+	border-radius: 50%
+	font-size: 0
+	box-shadow: 0 0 6px 0px $shadow-color
+	background: url('../images/more-icon.svg') no-repeat 
+	&:hover
+		box-shadow: 0 0 8px 0px $shadow-color
+	&:active
+		animation: click-ani 0.2s 0s 1
+	@keyframes click-ani
+	    0% 
+	        box-shadow: 0 0 0 0 rgba(10,46,94,0.12)	    
+	    100% 
+	        box-shadow: 0 0 0 8px rgba(10,46,94,0.12)
+
+
+/*區塊標題*/
+h2.zone-tit
+	@include text-style
+	position: relative
+	font:
+		size: 1.375em
+		family: $text-medium
+	margin: 45px auto 35px auto
+	line-height: 1.5
+	letter-spacing: 1px
+	span
+		padding: 0 0 0 25px
+		font:
+			size: 0.68em
+			family: $text-en
+		opacity: 0.54
+		letter-spacing: 0px
+	.more-bt
+		@include circle-bt-module
+		position: absolute
+		top: -5px
+		right: 0
+
+
+/*篩選區小標*/
+.sort-tit
+	line-height: 50px
+	opacity: 0.54
+	float: left
+/*篩選區-資訊分類*/
+.sort-bt-module
+	float: left
+	@include text-style
+	margin: 0 0 10px 0
+	.input-bk
+		width: 190px
+		float: left
+		margin: 0 0 20px 15px 
+		position: relative
+		img
+			position: absolute
+			right: 0px
+	input,input[type="text"],input[type="number"],input[type="email"],input[type="password"],select
+		width: 100%
+		height: 50px
+		border-radius: 25px
+		line-height: 50px
+		transition: all 0.3s ease
+		padding: 0 20px
+		background: #FFF
+		float: left
+		@include text_style
+		font:
+			family: $text-medium
+		letter-spacing: 0.5px
+		box-shadow: 0 0 6px 0px $shadow-color
+		&:hover
+			box-shadow: 0 0 8px 3px $shadow-color
+		&:focus
+			box-shadow: 0 0 8px 3px $shadow-color
+		&::-webkit-input-placeholder
+			color: $text_gray  /* Chrome/Opera/Safari */
+		&::-moz-placeholder  /* Firefox 19+ */
+			color: $text_gray 
+		&:-ms-input-placeholder  /* IE 10+ */
+			color: $text_gray  
+		&:-moz-placeholder  /* Firefox 18- */
+			color: $text_gray
+	.more-bt
+		width: 190px
+		height: 50px
+		border-radius: 25px
+		line-height: 50px
+		transition: all 0.3s ease
+		padding: 0 20px
+		background: #FFF
+		float: left
+		margin: 0 0 20px 15px 
+		@include text_style
+		font:
+			family: $text-medium
+		letter-spacing: 0.5px
+		box-shadow: 0 3px 6px 0px $shadow-color
+		position: relative
+		&:hover
+			box-shadow: 0 3px 8px 3px $shadow-color
+		img
+			position: absolute
+			right: 0
+			top: 0
+/*篩選區-分頁頁數模組*/
+.sort-page-module
+	float: left
+	@include text-style
+	margin: 0 0 10px 0
+	@include maxcom-1920
+		float: right
+	.back-bt,.next-bt
+		display: inline-block
+		@include circle-bt-module
+		margin: 0 15px 20px 15px
+		float: left
+		font-size: 0px
+	.back-bt
+		transform: rotate(180deg)
+	.next-bt
+		margin: 0 0 20px 15px
+	.page-num
+		line-height: 50px
+		float: left
+		font:
+			family: $text-en-bold,$text-medium		
+/*篩選區-跳至區域錨點模組*/
+.sort-section-module
+	display: inline-block
+	width: auto
+	@include text-style
+	position: relative
+	margin: 50px auto 0 auto
+	#sel_section_bt
+		width: 190px
+		height: 50px
+		border-radius: 25px
+		line-height: 50px
+		padding: 0 20px
+		background: #FFF
+		float: left
+		margin: 0 0 0 15px
+		@include text_style
+		font:
+			family: $text-medium
+		letter-spacing: 0.5px
+		box-shadow: 0 3px 6px 0px $shadow-color
+		position: relative
+		&:hover
+			box-shadow: 0 3px 8px 3px $shadow-color
+		img
+			position: absolute
+			right: 0
+			top: 0
+	#sel_open_list
+		display: none
+		overflow: hidden
+		position: absolute
+		right: 0px
+		top: 65px
+		z-index: 400
+		width: 190px
+		height: auto
+		border-radius: 8px
+		background: #FFF
+		box-shadow: 0 3px 8px 3px $shadow-color
+		@include text_style
+		font:
+			family: $text-medium
+		a
+			display: block
+			line-height: 50px
+			border-bottom: $gray-line
+			color: $black
+			padding: 0 20px
+			&:hover
+				background: $main-color
+				color: #FFF
+
+	
+		
+
+//頁面編排模組組件
+
+/*消息列表.附件下載列表模組*/
+.news-list-module
+	@include section-white-area
+	/*消息標題*/
+	.news-list-title
+		display: none
+		@include maxcom
+			border-bottom: $gray-line
+			display: block
+			@include text-style
+			font:
+				size: $text-16px
+			color: rgba(67,66,93,0.54)
+			text-transform: uppercase
+			padding: 22px 40px 20px 40px
+			.apart-title
+				display: none
+				width: 12%
+				float: left
+			.classify-title
+				display: none
+				width: 15%
+				display: none
+				float: left
+			.date-title
+				width: 20%
+				float: left
+			.news-title
+				width: 80%
+				float: left
+		@include maxcom-1920
+			.apart-title
+				display: block
+				width: 10%
+			.classify-title
+				display: block
+				width: 12%
+				float: left
+			.date-title
+				width: 13%
+				float: left
+			.news-title
+				width: 65%
+				float: left
+	/*消息列表*/
+	.news-list
+		padding: 15px 40px
+		background: rgba(67,66,93,0.03)
+		border-bottom: $gray-line
+		line-height: 1.5em
+		@include text-style
+		font:
+			size: 1.09375em
+			family: $text-medium
+		@include ipad
+			padding: 16px 40px 16px 40px
+		&:nth-of-type(2n)
+			background: #FFF
+		&:last-of-type
+			border-bottom: none
+			border-radius: 0 0 8px 8px
+		p.apart
+			line-height: 1.5
+			width: auto
+			float: left
+			opacity: 0.8
+			padding: 0 20px 0 0
+			margin: 0 auto 10px auto
+			@include maxcom
+				display: none
+			@include maxcom-1920
+				display: block
+				width: 10%
+				float: left
+				margin: 0 auto
+				@include nowrap
+		p.classify
+			line-height: 1.5
+			width: auto
+			float: left
+			opacity: 0.8
+			padding: 0 20px 0 0
+			margin: 0 auto 10px auto
+			@include maxcom
+				display: none
+			@include maxcom-1920
+				display: block
+				width: 12%
+				float: left
+				margin: 0 auto
+				@include nowrap
+		p.date
+			line-height: 1.5
+			padding: 3px 0 0 0
+			width: auto
+			float: left
+			@include en-text-style
+			font:
+				size: $text-16px
+			color: $main-color
+			margin: 0 auto 10px auto
+			@include maxcom
+				width: 20%
+				float: left
+				margin: 0 auto
+				@include nowrap
+			@include maxcom-1920
+				display: block
+				width: 13%
+				float: left
+				margin: 0 auto
+				@include nowrap
+		a.news-title
+			width: 100%
+			display: block
+			color: $black
+			line-height: 1.5
+			clear: both
+			@include maxcom
+				width: 80%
+				float: left
+				@include nowrap
+				padding: 0
+				clear: none
+			@include maxcom-1920
+				width: 65%
+			&:hover
+				color: $main-color
+
+
+/*內頁消息.資料.下載頁模組*/
+.content-page-module
+	@include section-white-area
+	@include text-style
+	/*消息公告資訊*/
+	.em-info-area
+		padding: 20px 40px 18px 40px
+		width: 100%
+		background: $main-color
+		border-radius: 8px 8px 0 0
+		.info-tit
+			font:
+				family: $text-en-bold,$text-medium
+				size: $text-18px
+				weight: normal	
+			color: #FFF
+			line-height: 1.6
+			float: left
+			margin: 0 50px 0 0
+			letter-spacing: 0.5px
+			span
+				opacity: 0.54
+				padding: 0 15px 0 0
+	.tit
+		background: $bg-gray
+		padding: 20px 40px 15px 40px
+		font:
+			family: $text-en-bold,$text-medium
+			size: 1.625em
+		color: $main-color
+		line-height: 1.6
+	/*文編區*/	
+	.text-area
+		padding: 20px 40px
+		p.text
+			@include text-style
+			font:
+				size: 1.25em
+			line-height: 1.9
+			letter-spacing: 0px
+		img
+			width: 100%
+			height: auto
+			border-radius: 8px
+			margin: 20px 0
+		h6
+			color: $main-color
+			font:
+				size: 1.5em
+				weight: normal
+			line-height: 1.8
+	/*附件下載區塊模組*/
+	.download-file-area
+		padding: 30px 40px
+		border-top: $gray-line
+		.download-tit
+			opacity: 0.54
+			margin: 0 0 20px 0
+		.download-file
+			width: 100%
+			cursor: pointer
+			line-height: 1.8
+			margin: 0 0 8px 0
+			font:
+				size: $text-18px
+				family: $text-en-bold,$text-medium
+			color: $main-color
+			position: relative
+			transition: all 0.5s linear
+			img
+				position: relative
+				top: 5px
+				margin: 0 15px 0 0
+			&:hover
+				text-decoration: underline
+				color: $black
+
+
+/*行事曆行程重點資訊區*/
+.cal-em-info
+	width: 100%
+	height: 170px
+	background: $main-color
+	border-radius: 8px 8px 0 0
+	padding: 40px 40px 35px 40px
+	.left-area
+		width: auto
+		overflow: hidden
+		float: left
+		@include nowrap
+		letter-spacing: 1px
+		.date
+			font:
+				size: $text-18px
+				family: $text-medium
+			opacity: 0.54
+			color: #FFF
+			margin: 0 0 10px 0
+			span
+				letter-spacing: 0px
+				padding: 0 10px 0 0 
+				font:
+					family: $text-en-bold
+		.location
+			margin: 0 0 15px 0
+			font:
+				size: 1.25em
+				family: $text-medium
+			color: #FFF
+		.time
+			font:
+				size: 1.875em
+				family: $text-en-bold
+			color: $green
+			letter-spacing: 0px
+	.right-area
+		display: none
+		@include maxcom-1920
+			display: block
+			width: auto
+			float: right
+			margin: 20px 15px 0 0
+		.icon
+			position: relative
+			width: 60px
+			height: 60px
+			background: $green
+			border-radius: 50%
+			animation: calendar-ani 2s 1s infinite 
+			box-shadow: 0px 25px 30px 0px rgba(0,230,118,0.3)
+			img
+				width: 32px
+				height: 32px
+				position: absolute
+				top: 14px
+				left: 13px
+		@keyframes calendar-ani
+		    0% 
+		        box-shadow: 0 0 0 0px rgba(0,230,118,0.12),0 0 0 0px rgba(0,230,118,0.1),0px 25px 30px 0px rgba(0,230,118,0.3)
+		    70% 
+		        box-shadow: 0 0 0 8px rgba(0,230,118,0.12),0 0 0 20px rgba(0,230,118,0.1),0px 25px 30px 0px rgba(0,230,118,0.54)
+		    
+		    100% 
+		        box-shadow: 0 0 0 8px rgba(0,230,118,0),0 0 0 20px rgba(0,230,118,0),0px 25px 30px 0px rgba(0,230,118,0.3)
+
+
+

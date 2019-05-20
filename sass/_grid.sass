@@ -1,0 +1,31 @@
+/*斷點設置*/
+@mixin minphone
+	@media all and (min-width: 20em)/*320px*/
+		@content
+
+@mixin iphone
+	@media all and (min-width: 25.8em)/*414px*/
+		@content
+
+@mixin ipad
+	@media all and (min-width: 48em)/*768px*/
+		@content
+
+@mixin computer
+	@media all and (min-width: 64em)/*1024px*/
+		@content
+
+@mixin maxcom
+	@media all and (min-width: 83em)/*1330px*/
+		@content
+
+@mixin maxcom_1920
+	@media all and (min-width: 118em)/*1888x*/
+		@content
+
+/*列印用*/
+@mixin print
+	@media print
+		@content
+
+

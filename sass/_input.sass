@@ -1,0 +1,225 @@
+/*表單樣式*/
+.input_group
+	width: 100%
+	// @include ipad
+	// 	.input_bk
+	// 		width: 50%
+	// 		float: left	
+.input_bk
+	width: 100%
+	height: auto
+	margin: 0 auto 35px auto
+	@include text_style
+	p
+		@include text_style
+		letter-spacing: 0.5px
+		span
+			display: inline-block
+			color: $main_color
+			padding: 0 0 0 20px
+	input,input[type="text"],input[type="number"],input[type="email"],input[type="password"],select
+		width: 100%
+		height: 50px
+		border-radius: 25px
+		line-height: 50px
+		transition: all 0.3s ease
+		padding: 0 20px
+		background: $bg_gray
+		margin: 20px 0 0 0 
+		@include text_style
+		letter-spacing: 0.5px
+		&:hover
+			box-shadow: 0 0px 20px 5px rgba(0,0,0,0.08) inset
+		&:focus
+			box-shadow: 0 0px 20px 5px rgba(0,0,0,0.08) inset
+		&::-webkit-input-placeholder
+			color: $text_gray  /* Chrome/Opera/Safari */
+		&::-moz-placeholder  /* Firefox 19+ */
+			color: $text_gray 
+		&:-ms-input-placeholder  /* IE 10+ */
+			color: $text_gray  
+		&:-moz-placeholder  /* Firefox 18- */
+			color: $text_gray
+	textarea
+		width: 100%
+		height: 150px
+		border-radius: 25px
+		background: $bg_gray
+		line-height: 1.5em
+		transition: all 0.3s ease
+		padding: 20px
+		margin: 20px 0 0 0
+		@include text_style
+		resize: none /*禁用拖動*/
+		&:hover
+			box-shadow: 0 0px 20px 5px rgba(0,0,0,0.08) inset
+		&:focus
+			box-shadow: 0 0px 20px 5px rgba(0,0,0,0.08) inset
+		&::-webkit-input-placeholder
+			color: $text_gray  /* Chrome/Opera/Safari */
+		&::-moz-placeholder  /* Firefox 19+ */
+			color: $text_gray 
+		&:-ms-input-placeholder  /* IE 10+ */
+			color: $text_gray 
+		&:-moz-placeholder  /* Firefox 18- */
+			color: $text_gray
+	.che_rad_area
+		width: auto
+		float: left
+		margin: 20px 30px 10px 0
+		.che_rad_style
+			width: 20px
+			height: 20px
+			margin: 0 20px 0 0
+			background: $bg_gray
+			float: left
+		span
+			float: left
+			padding: 2px 0 0 0
+	.img_verification
+		margin: 20px 0 0 0
+a.submit_bt
+	display: block
+	width: 200px
+	@include text_style
+	font:
+		size: $text_15px
+	letter-spacing: 0.5px
+	color: #FFF
+	text-align: center
+	line-height: 50px
+	box-shadow: 0px 8px 10px rgba(0,0,0,0.16)
+	border-radius: 25px
+	background: $main_color
+	float: right
+	&:hover
+		transform: translateY(-10px)
+
+.date_area
+	.input_bk
+		input,input[type="text"],input[type="number"],input[type="email"],input[type="password"],select
+			width: 30%
+			margin-right: 3%
+			float: left
+			
+
+
+			
+			
+	
+
+
+
+/*自定義checkbox 及 radio 樣式*/
+
+// @keyframes hover-color 
+// 	from
+// 		border-color: $light_gray
+// 	to
+// 		border-color: $blue
+
+// .magic-radio,.magic-checkbox 
+// 	position: absolute
+// 	display: none; 
+
+// .magic-radio[disabled],.magic-checkbox[disabled] 
+//  	cursor: not-allowed
+
+// .magic-radio + label,.magic-checkbox + label 
+// 	position: relative
+// 	display: block
+// 	padding-left: 40px
+// 	padding-top: 2px
+// 	cursor: pointer;
+// 	vertical-align: middle
+
+
+// .magic-radio + label:hover:before,.magic-checkbox + label:hover:before 
+// 	animation-duration: 0.4s
+// 	animation-fill-mode: both
+// 	animation-name: hover-color
+
+// .magic-radio + label:before,.magic-checkbox + label:before
+// 	position: absolute
+// 	top: 0
+// 	left: 0
+// 	display: inline-block
+// 	width: 20px
+// 	height: 20px
+// 	content: ''
+// 	border: $gray_line
+
+
+// .magic-radio + label:after,.magic-checkbox + label:after 
+// 	position: absolute
+// 	display: none
+// 	content: ''
+
+// .magic-radio[disabled] + label,.magic-checkbox[disabled] + label
+// 	cursor: not-allowed
+// 	color: $light_gray
+
+
+// .magic-radio[disabled] + label:hover, .magic-radio[disabled] + label:before, .magic-radio[disabled] + label:after,
+// .magic-checkbox[disabled] + label:hover,.magic-checkbox[disabled] + label:before,.magic-checkbox[disabled] + label:after 
+// 	cursor: not-allowed
+
+
+// .magic-radio[disabled] + label:hover:before,.magic-checkbox[disabled] + label:hover:before
+// 	border: $gray_line
+// 	animation-name: none
+
+
+// .magic-radio[disabled] + label:before,.magic-checkbox[disabled] + label:before
+// 	border-color: $light_gray
+
+// .magic-radio:checked + label:before,.magic-checkbox:checked + label:before
+// 	animation-name: none
+
+// .magic-radio:checked + label:after,.magic-checkbox:checked + label:after
+// 	display: block
+
+// .magic-radio + label:before
+// 	border-radius: 50%
+
+// .magic-radio + label:after
+// 	top: 7px
+// 	left: 7px
+// 	width: 8px
+// 	height: 8px
+// 	border-radius: 50%
+// 	background: $blue
+
+// .magic-radio:checked + label:before
+// 	border: $gray_line
+
+// .magic-radio:checked[disabled] + label:before
+// 	border: $gray_line
+
+// .magic-radio:checked[disabled] + label:after
+// 	background: $light_gray
+
+// .magic-checkbox + label:before
+// 	border-radius: 3px
+
+// .magic-checkbox + label:after
+// 	top: 2px
+// 	left: 7px
+// 	box-sizing: border-box
+// 	width: 6px
+// 	height: 12px
+// 	transform: rotate(45deg)
+// 	border-width: 2px
+// 	border-style: solid
+// 	border-color: #fff
+// 	border-top: 0
+// 	border-left: 0
+
+// .magic-checkbox:checked + label:before
+// 	border: $blue
+// 	background: $blue
+
+// .magic-checkbox:checked[disabled] + label:before
+// 	border: $light_gray
+// 	background: $light_gray
+

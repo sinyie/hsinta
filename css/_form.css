@@ -1,0 +1,13 @@
+@charset "UTF-8";
+/*紙本廠商登記表*/
+/*form.php*/
+.workorder_a4 {
+  width: 21cm;
+  height: 29.7cm;
+  padding: 1cm;
+  margin: 0 auto; }
+  .workorder_a4 .a4_line_area {
+    width: 100%;
+    height: 100%;
+    border: 2px solid #000000;
+    padding: 0.8cm; }
